@@ -1,7 +1,11 @@
-const axios = require("axios");
-MY_TOKEN = "";
+const path = require('path');
+const currentModuleDir = __dirname;
+const dotenvPath = path.resolve(currentModuleDir, '../../.env');
 
-const BASE_URL = `https://api.telegram.org/bot${MY_TOKEN}`; 
+require('dotenv').config({ path: dotenvPath });
+const axios = require("axios");
+
+const BASE_URL = `https://api.telegram.org/bot${process.env.MY_TOKEN}`; 
 function getAxiosInstance() {
     return {
         get(method, params) {
