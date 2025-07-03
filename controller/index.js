@@ -1,4 +1,5 @@
 const { handleMessage } = require("./lib/Telegram");
+const User = require('../models/User');  // adjust path if needed
 
 async function handler(req, method){
   const { body } = req;
